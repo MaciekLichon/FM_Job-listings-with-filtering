@@ -1,0 +1,47 @@
+@import '../../styles/variables.scss';
+
+.filters__item {
+    display: flex;
+    align-items: stretch;
+    border-radius: 4px;
+    cursor: pointer;
+    overflow: hidden;
+
+    &-text {
+      background-color: hsla(180, 29%, 50%, 0.1);
+      color: hsla(180, 29%, 50%, 1);
+      font-size: 16px;
+      line-height: 1.5;
+      letter-spacing: -0.123px;
+      padding: 5px 10px 3px 8px;
+    }
+
+    &-button {
+      background-color: $clr-cyan-100;
+      width: 32px;
+      position: relative;
+      transition: background-color $transition-regular;
+
+      span {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 16px;
+        height: 3px;
+        background-color: $clr-white;
+
+        &:first-child {
+          transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        &:last-child {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+
+    &:hover &-button {
+      background-color: $clr-cyan-700;
+    }
+  }

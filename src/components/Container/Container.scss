@@ -1,0 +1,9 @@
+.container {
+    box-sizing: content-box;
+    max-width: 1110px;
+    padding: 0 24px;
+    margin: 0 auto;
+
+    display: grid;
+    justify-items: center;
+}

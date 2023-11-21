@@ -1,0 +1,27 @@
+@import './variables.scss';
+
+body {
+    min-height: 100vh;
+    background-image: 
+        url('../images/bg-header-mobile.svg'),
+        linear-gradient($clr-cyan-100 156px, $clr-light-200 156px);
+    background-repeat: no-repeat;
+    background-size: 100% 156px, 100%;
+
+    font-family: $ff-regular;
+    font-weight: $fw-bold;
+
+    @media (min-width: $desktop) {
+        background-image: 
+        url('../images/bg-header-desktop.svg'),
+        linear-gradient($clr-cyan-100 156px, $clr-light-200 156px);
+    }
+}
+
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}

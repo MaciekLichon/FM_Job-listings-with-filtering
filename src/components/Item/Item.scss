@@ -1,0 +1,177 @@
+@import '../../styles/variables.scss';
+
+.item {
+    background-color: $clr-white;
+    border-radius: 5px;
+    padding: 0 24px 24px 24px;
+    box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    max-width: 500px;
+    width: 100%;
+
+    @media (min-width: $desktop) {
+        max-width: none;
+        flex-direction: row;
+        padding: 32px 40px;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    &_featured {
+        background-image: linear-gradient(90deg, $clr-cyan-100 5px, $clr-white 5px);
+    }
+
+    &__details {
+        padding-bottom: 15px;
+        border-bottom: 1px solid hsla(180, 10%, 74%, 1);
+
+        @media (min-width: $desktop) {
+            border: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: auto 1fr;
+            column-gap: 24px;
+        }
+
+        &-logo {
+            width: 48px;
+            aspect-ratio: 1 / 1;
+            margin-top: -24px;
+            margin-bottom: 8px;
+
+            @media (min-width: $desktop) {
+                margin: 0;
+                grid-row: span 3;
+                width: 88px;
+            }
+        }
+
+        &-overview {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            line-height: 1;
+            margin-bottom: 9px;
+
+            @media (min-width: $desktop) {
+                margin-bottom: 10px;
+            }
+
+            &__company {
+                color: $clr-cyan-100;
+                font-size: 13px;
+                margin-right: 22px;
+
+                @media (min-width: $desktop) {
+                    font-size: 18px;
+                    margin-right: 7px;
+                }
+            }
+
+            &__badge {
+                font-size: 14px;
+                letter-spacing: -0.108px;
+                text-transform: uppercase;
+                line-height: 1;
+                padding: 7px 8px 3px;
+                color: $clr-white;
+                border-radius: 12px; 
+
+                &_new {
+                    background-color: $clr-cyan-100;
+                }
+
+                &_featured {
+                    background-color: $clr-cyan-700;
+                }
+            }
+        }
+
+        &-position {
+            color: $clr-cyan-700;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 8px;
+            cursor: pointer;
+
+            transition: color $transition-regular;
+
+            &:hover {
+                color: $clr-cyan-100;
+            }
+
+            @media (min-width: $desktop) {
+                margin-bottom: 7px;
+                font-size: 22px;
+                line-height: 1.1;
+            }
+        }
+
+        &-offer {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 16px;
+            font-weight: $fw-medium;
+            color: $clr-cyan-400;
+            letter-spacing: -0.123px;
+            line-height: 1.5;
+
+            @media (min-width: $desktop) {
+                font-size: 18px;
+                letter-spacing: -0.138px;
+                line-height: 1.33;
+                gap: 18px;
+            }
+
+            &__info:not(:last-child) {
+                padding-right: 10px;
+                position: relative;
+
+                @media (min-width: $desktop) {
+                    padding-right: 18px;
+                }
+
+                &::after {
+                    position: absolute;
+                    content: '';
+                    right: -2px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    height: 4px;
+                    width: 4px;
+                    border-radius: 50%;
+                    background-color: hsla(180, 10%, 74%, 1);
+                }
+            }
+        }
+    }
+
+    &__categories {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+
+        &-elem {
+            border-radius: 4px;
+            background-color: hsla(180, 29%, 50%, 0.1);
+            color: hsla(180, 29%, 50%, 1);
+            font-size: 16px;
+            line-height: 1.5;
+            letter-spacing: -0.123px;
+            padding: 5px 10px 3px 8px;
+            cursor: pointer;
+
+            transition: color $transition-regular, background-color $transition-regular;
+
+            &:hover {
+                color: $clr-white;
+                background-color: $clr-cyan-100;
+            }
+        }
+    }
+}

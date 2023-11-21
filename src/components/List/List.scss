@@ -1,0 +1,13 @@
+@import '../../styles/variables.scss';
+
+.list {
+  padding-top: 56px;
+  display: grid;
+  row-gap: 40px;
+  justify-items: center;
+  width: 100%;
+
+  @media (min-width: $desktop) {
+    padding-top: 40px;
+  }
+}

@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.filters {
+  margin-top: 156px;
+  border-radius: 5px;
+  background-color: $clr-white;
+  box-shadow: 0px 15px 20px -5px rgba(13, 113, 130, 0.15);
+
+  max-width: 500px;
+  width: 100%;
+
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows $transition-regular, margin-top $transition-regular, margin-bottom $transition-regular;
+  
+  @media (min-width: $desktop) {
+      max-width: none;
+      margin-bottom: 36px;
+      transition: none;
+  }
+
+  & > div {
+    overflow: hidden;
+  }
+
+  &_active {
+    margin-top: 120px;
+    margin-bottom: 0;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows $transition-regular, margin-top $transition-regular, margin-bottom $transition-regular;
+  }
+
+  &__content {
+    padding: 20px 25px 20px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+
+    @media (min-width: $desktop) {
+        padding: 20px 40px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__clear-button {
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: -0.123px;
+    color: $clr-cyan-400;
+    cursor: pointer;
+    transition: color $transition-regular;
+
+    &:hover {
+        color: $clr-cyan-100;
+        text-decoration: underline;
+    }
+  }
+}
